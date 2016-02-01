@@ -1,6 +1,8 @@
-package com.zimp.product.api.login;
+package test.com.zimp.product.api.login;
 
 import org.junit.Test;
+import com.zimp.product.api.login.LoginAPI;
+import com.zimp.product.api.login.LoginRequest;
 
 import static org.junit.Assert.*;
 
@@ -14,9 +16,12 @@ public class LoginAPITest {
         LoginAPI login = new LoginAPI();
 
         LoginRequest request = new LoginRequest();
-        request.email = "gaurav@cuelogic.com";
-        request.password = "asdf123";
-
+        /*request.email = "gaurav@cuelogic.com";
+        request.password = "asdf123";*/
+        
+        request.email = "gauravm@yopmail.com";
+        request.password = "Demo@12345";
+        
         login.loginVerifySuccess(request);
 
         assertTrue(true);

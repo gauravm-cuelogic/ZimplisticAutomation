@@ -31,7 +31,7 @@ public class HTTPHelper {
         while ((buffer = reader.readLine()) != null) {
             data += buffer;
         }
-        return  data;
+        return data;
     }
 
     private void convertAndSendResponse(HttpResponse libHTTPResponse) {
@@ -63,5 +63,4 @@ public class HTTPHelper {
             listener.onRequestFailed(e);
         }
     }
-
 }

@@ -1,6 +1,6 @@
 package com.zimp.product.api.login;
 
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 import java.io.StringWriter;
 
@@ -9,7 +9,6 @@ import java.io.StringWriter;
  *
  *
  *
-
  Request
 
  {
@@ -18,7 +17,6 @@ import java.io.StringWriter;
  }
 
  Response
-
 
  */
 
@@ -32,16 +30,23 @@ public class LoginJSONGenerator {
 
     public String getJSONString() {
         try {
-            JSONObject login = new JSONObject();
+            
+        	JSONObject login = new JSONObject();
+            
             login.put("email", request.email);
-            login.put("password", request.password);
-
+        	login.put("password", request.password);
+                       
             StringWriter out = new StringWriter();
-            login.writeJSONString(out);
-
+            
+            login.write(out);
+            
+            //((String)login).writeJSONString(out);
+            
             String jsonText = out.toString();
-            System.out.println("Login payload: " + jsonText);
+            System.out.println("Login payload: " +jsonText);
+                        
             return jsonText;
+            
         } catch (Exception e) {
             return null;
         }

@@ -50,7 +50,6 @@ public class TestScript {
 
         if (testCaseData != null)
             testCaseData.clear();
-
     }
 
     public void testcasePassed(String customMessage)

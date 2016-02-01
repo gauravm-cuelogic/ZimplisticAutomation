@@ -9,4 +9,5 @@ public class HTTPRequest {
     public String url;
     public ContentType contentType;
     public String payload;
+    public int logintype;
 }
