@@ -14,15 +14,17 @@ public class ForgotPwdJSONGenerator {
 		try {
 			JSONObject forgotPwd = new JSONObject();
 			forgotPwd.put("email", request.email);
-			forgotPwd.put("login type", request.logintype);
-
+			forgotPwd.put("logintype", request.logintype);
+			
 			StringWriter out = new StringWriter();
 			// ((Object) login).writeJSONString(out);
-
+			
+			forgotPwd.write(out);
+			
 			String jsonText = out.toString();
-			System.out.println("Login payload: " + jsonText);
+			System.out.println("Forgot password payload: " + jsonText);
 			return jsonText;
-		} catch (Exception e) {
+		}   catch (Exception e) {
 			return null;
 		}
 	}

@@ -13,8 +13,7 @@ public class LoginAPI extends APIHandler {
 	private HTTPRequest generateLoginRequest(LoginRequest loginRequest) {
 		HTTPRequest httpRequest = new HTTPRequest();
 		httpRequest.contentType = ContentType.JSON;
-		httpRequest.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:5000/users/login"; // Generate
-																								// URL
+		httpRequest.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:5000/v1/users/login"; // Generate																						// URL
 		httpRequest.payload = new LoginJSONGenerator(loginRequest).getJSONString();
 		return httpRequest;
 	}

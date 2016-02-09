@@ -6,10 +6,11 @@ import com.zimp.product.api.APIHandler;
 
 public class ForgotPwdAPI extends APIHandler {
 
-	private HTTPRequest generateForgotPwdRequest(ForgotPwdRequest forgotpwdRequest) {
+	private HTTPRequest generateForgotPwdRequest(ForgotPwdRequest forgotpwdRequest){
 		HTTPRequest httpRequest = new HTTPRequest();
 		httpRequest.contentType = ContentType.JSON;
-		httpRequest.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:4000/documentation#!/users/usersforgotpassword"; // Generate
+		//httpRequest.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:4000/documentation#!/users/usersforgotpassword"; // Generate
+		httpRequest.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:5000/v1/users/forgotpassword";
 		// URL
 		httpRequest.payload = new ForgotPwdJSONGenerator(forgotpwdRequest).getJSONString();
 		return httpRequest;
@@ -41,6 +42,7 @@ public class ForgotPwdAPI extends APIHandler {
 		if (verifyHTTPCode(200) == true) {
 			String payload = getPayload();
 			System.out.println(payload);
+			
 			ForgotPwdResponseParser parser = new ForgotPwdResponseParser(payload);
 			ForgotPwdResponse response = parser.getResponse();
 			System.out.println(response.email);

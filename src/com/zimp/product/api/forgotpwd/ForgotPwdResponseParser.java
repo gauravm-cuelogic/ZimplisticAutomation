@@ -12,24 +12,23 @@ public class ForgotPwdResponseParser {
 	}
 
 	public ForgotPwdResponse getResponse() {
-		ForgotPwdResponse response = new ForgotPwdResponse();
+		ForgotPwdResponse fpwdresponse = new ForgotPwdResponse();
 
 		JSONParser parser = new JSONParser();
 		try {
 
 			Object obj = parser.parse(responseJSON);
 			JSONObject jobj = (JSONObject) obj;
-			response.fname = (String) jobj.get("fname");
-			response.authToken = (String) jobj.get("authToken");
-			response.email = (String) jobj.get("email");
-			response.lname = (String) jobj.get("lname");
-			response.id = (String) jobj.get("id");
+			fpwdresponse.fname = (String) jobj.get("fname");
+			fpwdresponse.authToken = (String) jobj.get("authToken");
+			fpwdresponse.email = (String) jobj.get("email");
+			fpwdresponse.lname = (String) jobj.get("lname");
 
 		} catch (Exception e) {
 
 		}
 
-		return response;
+		return fpwdresponse;
 	}
 
 }

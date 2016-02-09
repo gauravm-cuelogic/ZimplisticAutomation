@@ -2,39 +2,26 @@ package test.com.zimp.product.api.forgotpwd;
 
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+import com.zimp.product.api.forgotpwd.ForgotPwdAPI;
+import com.zimp.product.api.forgotpwd.ForgotPwdRequest;
 
-import com.cuelogic.framework.network.ContentType;
-import com.cuelogic.framework.network.HTTPHelper;
-import com.cuelogic.framework.network.HTTPParser;
-import com.cuelogic.framework.network.HTTPRequest;
-import com.cuelogic.framework.network.HTTPResponse;
-public class ForgotPwdTest implements HTTPParser{
+public class ForgotPwdTest {
 
 	@Test
-	public void testSendPOSTRequest() throws Exception {
-		HTTPRequest request = new HTTPRequest();
-		// request.url = "";
+	public void testForgotPwdVerifySuccess() throws Exception {
+		ForgotPwdAPI forgotPwd = new ForgotPwdAPI();
 
-		request.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:4000/users/forgotpassword";
-		request.contentType = ContentType.JSON;
-		request.payload = "{\"email\": \"gauravm@yopmail.com\",\"logintype\": 0}";
+		ForgotPwdRequest request = new ForgotPwdRequest();
+		/*
+		 * request.email = "gaurav@cuelogic.com"; request.password = "asdf123";
+		 */
 
-		HTTPHelper helper = new HTTPHelper(this);
-		helper.sendPOSTRequest(request);
-		System.out.println("POST Request sent");
-	}
+		request.email = "gauravm@yopmail.com";
+		request.logintype = 0;
 
-	@Override
-	public void onResponseRecevied(HTTPResponse response) {
-		System.out.println("POST Success");
-		System.out.println("Response code: " + response.statusCode.toString());
-		System.out.println("Payload: " + response.payload);
+		forgotPwd.forgotPwdVerifySuccess(request);
+
 		assertTrue(true);
 	}
 
-	@Override
-	public void onRequestFailed(Exception e) {
-		System.out.println("Exception: " + e.getLocalizedMessage());
-		assertTrue(false);
-	}
 }

@@ -36,8 +36,8 @@ public class HTTPHelper {
 
     private void convertAndSendResponse(HttpResponse libHTTPResponse) {
         try {
-            HTTPResponse response = new HTTPResponse();
-
+            
+        	HTTPResponse response = new HTTPResponse();
             response.statusCode = libHTTPResponse.getStatusLine().getStatusCode();
             response.payload = getAllDataFromInputStream(libHTTPResponse.getEntity().getContent());
 

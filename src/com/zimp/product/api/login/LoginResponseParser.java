@@ -2,7 +2,6 @@ package com.zimp.product.api.login;
 
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.omg.CORBA.StringHolder;
 
 /**
  * Created by ninad on 15/01/16.
