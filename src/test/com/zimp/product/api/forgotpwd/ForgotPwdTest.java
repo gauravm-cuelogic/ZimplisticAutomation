@@ -8,13 +8,27 @@ import com.zimp.product.api.forgotpwd.ForgotPwdRequest;
 public class ForgotPwdTest {
 
 	@Test
+    public void forgotPwdTestCases(){
+    
+    	try {
+			testForgotPwdVerifySuccess();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	try {
+			testForgotPwdVerifyFailure();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+    }
+	
+	
 	public void testForgotPwdVerifySuccess() throws Exception {
 		ForgotPwdAPI forgotPwd = new ForgotPwdAPI();
 
 		ForgotPwdRequest request = new ForgotPwdRequest();
-		/*
-		 * request.email = "gaurav@cuelogic.com"; request.password = "asdf123";
-		 */
 
 		request.email = "gauravm@yopmail.com";
 		request.logintype = 0;
@@ -23,5 +37,19 @@ public class ForgotPwdTest {
 
 		assertTrue(true);
 	}
+	
+	public void testForgotPwdVerifyFailure() throws Exception {
+		ForgotPwdAPI forgotPwd = new ForgotPwdAPI();
+        
+		ForgotPwdRequest request = new ForgotPwdRequest();
+ 
+		request.email = "gauravmw@yopmail.com";
+		request.logintype = 0;
+
+        
+		forgotPwd.forgotPwdVerifyFailure(request);
+
+        assertTrue(true);
+    }
 
 }

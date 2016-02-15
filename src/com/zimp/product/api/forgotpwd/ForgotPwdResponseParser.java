@@ -1,7 +1,7 @@
 package com.zimp.product.api.forgotpwd;
 
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 
 public class ForgotPwdResponseParser {
 
@@ -14,11 +14,12 @@ public class ForgotPwdResponseParser {
 	public ForgotPwdResponse getResponse() {
 		ForgotPwdResponse fpwdresponse = new ForgotPwdResponse();
 
-		JSONParser parser = new JSONParser();
+		//JSONParser parser = new JSONParser();
 		try {
 
-			Object obj = parser.parse(responseJSON);
-			JSONObject jobj = (JSONObject) obj;
+			//Object obj = parser.parse(responseJSON);
+			
+			JSONObject jobj = new JSONObject(responseJSON);
 			fpwdresponse.fname = (String) jobj.get("fname");
 			fpwdresponse.authToken = (String) jobj.get("authToken");
 			fpwdresponse.email = (String) jobj.get("email");

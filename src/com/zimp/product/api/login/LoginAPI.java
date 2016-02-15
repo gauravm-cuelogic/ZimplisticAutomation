@@ -33,6 +33,7 @@ public class LoginAPI extends APIHandler {
 	}
 
 	public boolean loginVerifyFailure(LoginRequest loginRequest) {
+		triggerLogin(loginRequest);
 		return true;
 	}
 

@@ -17,7 +17,6 @@ public class HTTPHelperTest implements HTTPParser {
 	@Test
 	public void testSendPOSTRequest() throws Exception {
 		HTTPRequest request = new HTTPRequest();
-		// request.url = "";
 
 		//request.url = "http://ec2-52-2-75-121.compute-1.amazonaws.com:4000/users/login";
 		

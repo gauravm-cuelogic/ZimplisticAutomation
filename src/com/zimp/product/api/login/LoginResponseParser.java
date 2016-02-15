@@ -1,7 +1,7 @@
 package com.zimp.product.api.login;
 
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 
 /**
  * Created by ninad on 15/01/16.
@@ -23,10 +23,13 @@ public class LoginResponseParser {
 
 	public LoginResponse getResponse() {
 		LoginResponse response = new LoginResponse();
-		JSONParser parser = new JSONParser();
+		//JSONParser parser = new JSONParser();
+		
 		try {
-			Object obj = parser.parse(responseJSON);
-			JSONObject jobj = (JSONObject) obj;
+			
+			//Object obj = parser.parse(responseJSON);
+			
+			JSONObject jobj = new JSONObject(responseJSON);
 
 			response.fname = (String) jobj.get("fname");
 			response.authToken = (String) jobj.get("authToken");

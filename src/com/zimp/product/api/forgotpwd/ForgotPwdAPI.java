@@ -30,6 +30,7 @@ public class ForgotPwdAPI extends APIHandler {
 	}
 
 	public boolean forgotPwdVerifyFailure(ForgotPwdRequest request) {
+		triggerForgotPwd(request);
 		return true;
 	}
 

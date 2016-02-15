@@ -10,6 +10,7 @@ import com.cuelogic.framework.network.HTTPResponse;
  *
  * Base class for the the API's that would be implemented
  */
+
 public abstract class APIHandler implements HTTPParser {
 
 	protected HTTPResponse response;
@@ -42,6 +43,7 @@ public abstract class APIHandler implements HTTPParser {
 	public void onResponseRecevied(HTTPResponse response) {
 		this.response = response;
 		System.out.println(response.payload);
+		
 		parseAndVerifyAPIResponse();
 	}
 
